@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenis-Jenis Peluru - Tipografi</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #0f1c3f 0%, #1a2b5c 25%, #2d4a8f 50%, #1a2b5c 75%, #0f1c3f 100%);
+            background-attachment: fixed;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.2), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.4), transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.3), transparent),
+                radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.2), transparent);
+            background-size: 200px 100px;
+            background-repeat: repeat;
+            z-index: -1;
+            animation: twinkle 8s ease-in-out infinite alternate;
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.8; }
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .main-title {
+            font-family: "Poppins", sans-serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffffff, #e3f2fd, #bbdefb);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            letter-spacing: 2px;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #e3f2fd;
+            margin-bottom: 60px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 30px rgba(255, 255, 255, 0.3); }
+            to { text-shadow: 0 0 50px rgba(255, 255, 255, 0.6), 0 0 70px rgba(187, 222, 251, 0.3); }
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .bullet-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(15, 28, 63, 0.3);
+        }
+        
+        .bullet-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ffffff, #e3f2fd, #bbdefb);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .bullet-card:hover::before {
+            transform: translateX(0);
+        }
+        
+        .bullet-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(15, 28, 63, 0.4);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .bullet-title {
+            font-family: "Poppins", sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        
+        .bullet-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #e3f2fd;
+            margin-bottom: 20px;
+        }
+        
+        .bullet-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .spec-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 3px solid #bbdefb;
+            backdrop-filter: blur(5px);
+        }
+        
+        .spec-label {
+            font-size: 0.8rem;
+            color: #bbdefb;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .spec-value {
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+        
+        .category-section {
+            margin-bottom: 80px;
+        }
+        
+        .category-title {
+            font-family: "Poppins", sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #ffffff, #e3f2fd, #bbdefb);
+            border-radius: 2px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 60px;
+        }
+        
+        .footer-text {
+            color: #bbdefb;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .bullet-specs {
+                grid-template-columns: 1fr;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">JENIS-JENIS PELURU</h1>
+        <p class="subtitle">Panduan Komprehensif Tentang Klasifikasi Amunisi</p>
+        
+        <div class="category-section">
+            <h2 class="category-title">BERDASARKAN TEKNOLOGI</h2>
+            <div class="grid">
+                <div class="bullet-card">
+                    <h3 class="bullet-title">KINETIK APFSDS</h3>
+                    <p class="bullet-description">Armor-Piercing Fin-Stabilized Discarding Sabot, menggunakan energi kinetik murni dengan penetrator tungsten untuk menembus armor modern.</p>
+                    <div class="bullet-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Contoh</div>
+                            <div class="spec-value">120mm DM 53</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Platform</div>
+                            <div class="spec-value">Leopard 2A7</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Penetrasi</div>
+                            <div class="spec-value">650mm RHA</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Kecepatan</div>
+                            <div class="spec-value">1750 m/s</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bullet-card">
+                    <h3 class="bullet-title">EXPLOSIVE HESH</h3>
+                    <p class="bullet-description">High-Explosive Squash Head, meledak di permukaan armor dan menciptakan spall untuk merusak interior kendaraan.</p>
+                    <div class="bullet-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Contoh</div>
+                            <div class="spec-value">183mm HESH</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Platform</div>
+                            <div class="spec-value">FV 4005</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Muatan HE</div>
+                            <div class="spec-value">15.8 kg</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Efek</div>
+                            <div class="spec-value">Spalling</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bullet-card">
+                    <h3 class="bullet-title">ATGM TANDEM</h3>
+                    <p class="bullet-description">Anti-Tank Guided Missile dengan warhead tandem untuk menembus ERA dan armor reaktif modern.</p>
+                    <div class="bullet-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Contoh</div>
+                            <div class="spec-value">9M123 Khrizantema</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Platform</div>
+                            <div class="spec-value">Khrizantema-S</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Jangkauan</div>
+                            <div class="spec-value">6 km</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Penetrasi</div>
+                            <div class="spec-value">1200mm RHA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">BERDASARKAN FUNGSI</h2>
+            <div class="grid">
+                <div class="bullet-card">
+                    <h3 class="bullet-title">BALL AMMUNITION</h3>
+                    <p class="bullet-description">Peluru standar dengan inti timbal yang dilapisi jaket tembaga, dirancang untuk penggunaan umum dan latihan.</p>
+                    <div class="bullet-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Material</div>
+                            <div class="spec-value">Timbal + Tembaga</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Fungsi</div>
+                            <div class="spec-value">Tujuan Umum</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bullet-card">
+                    <h3 class="bullet-title">ARMOR PIERCING</h3>
+                    <p class="bullet-description">Peluru anti-lapis baja dengan inti keras dari tungsten atau baja yang mampu menembus perlindungan berlapis.</p>
+                    <div class="bullet-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Material</div>
+                            <div class="spec-value">Tungsten/Baja</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Fungsi</div>
+                            <div class="spec-value">Anti-Armor</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bullet-card">
+                    <h3 class="bullet-title">HOLLOW POINT</h3>
+                    <p class="bullet-description">Peluru dengan ujung berlubang yang mengembang saat mengenai target, memberikan stopping power maksimal.</p>
+                    <div class="bullet-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Desain</div>
+                            <div class="spec-value">Ujung Berlubang</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Fungsi</div>
+                            <div class="spec-value">Ekspansi</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bullet-card">
+                    <h3 class="bullet-title">TRACER</h3>
+                    <p class="bullet-description">Peluru dengan komposisi kimia yang menghasilkan jejak cahaya, memungkinkan penembak mengamati lintasan tembakan.</p>
+                    <div class="bullet-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Efek</div>
+                            <div class="spec-value">Jejak Cahaya</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Fungsi</div>
+                            <div class="spec-value">Observasi</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bullet-card">
+                    <h3 class="bullet-title">INCENDIARY</h3>
+                    <p class="bullet-description">Peluru pembakar yang mengandung bahan kimia untuk menyalakan target yang mudah terbakar seperti bahan bakar.</p>
+                    <div class="bullet-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Efek</div>
+                            <div class="spec-value">Membakar</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Target</div>
+                            <div class="spec-value">Bahan Bakar</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bullet-card">
+                    <h3 class="bullet-title">EXPLOSIVE</h3>
+                    <p class="bullet-description">Peluru dengan muatan peledak yang meledak saat mengenai target, memberikan damage area yang lebih luas.</p>
+                    <div class="bullet-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Efek</div>
+                            <div class="spec-value">Ledakan</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Damage</div>
+                            <div class="spec-value">Area Effect</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">KALIBER POPULER</h2>
+            <div class="grid">
+                <div class="bullet-card">
+                    <h3 class="bullet-title">9MM PARABELLUM</h3>
+                    <p class="bullet-description">Kaliber pistol paling populer di dunia, digunakan oleh militer dan polisi internasional.</p>
+                    <div class="bullet-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Diameter</div>
+                            <div class="spec-value">9.01mm</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Panjang</div>
+                            <div class="spec-value">19.15mm</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bullet-card">
+                    <h3 class="bullet-title">5.56 NATO</h3>
+                    <p class="bullet-description">Amunisi standar NATO untuk senapan serbu, menggantikan .308 Winchester dalam penggunaan militer.</p>
+                    <div class="bullet-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Diameter</div>
+                            <div class="spec-value">5.70mm</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Panjang</div>
+                            <div class="spec-value">57.40mm</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bullet-card">
+                    <h3 class="bullet-title">7.62 NATO</h3>
+                    <p class="bullet-description">Kaliber senapan sniper dan senapan mesin yang memberikan akurasi tinggi pada jarak jauh.</p>
+                    <div class="bullet-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Diameter</div>
+                            <div class="spec-value">7.82mm</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Panjang</div>
+                            <div class="spec-value">51.18mm</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p class="footer-text">
+                Informasi ini disajikan untuk tujuan edukasi dan referensi teknis.<br>
+                Penggunaan amunisi harus mematuhi hukum dan regulasi yang berlaku.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
