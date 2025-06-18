@@ -125,13 +125,47 @@
             background: rgba(255, 255, 255, 0.15);
         }
         
+        .bullet-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
         .bullet-title {
             font-family: "Poppins", sans-serif;
             font-size: 1.8rem;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 15px;
             letter-spacing: 1px;
+            margin: 0;
+        }
+        
+        .site-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .site-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+        
+        .site-button:active {
+            transform: translateY(0);
         }
         
         .bullet-description {
@@ -228,7 +262,10 @@
             <h2 class="category-title">BERDASARKAN TEKNOLOGI</h2>
             <div class="grid">
                 <div class="bullet-card">
-                    <h3 class="bullet-title">APFSDS</h3>
+                    <div class="bullet-header">
+                        <h3 class="bullet-title">APFSDS</h3>
+                        <button class="site-button" onclick="window.open('https://wiki.warthunder.com/unit/germ_leopard_2a7v', '_blank')">SITUS</button>
+                    </div>
                     <p class="bullet-description">Armor-Piercing Fin-Stabilized Discarding Sabot, menggunakan energi kinetik murni dengan penetrator tungsten untuk menembus armor modern.</p>
                     <div class="bullet-specs">
                         <div class="spec-item">
@@ -236,12 +273,12 @@
                             <div class="spec-value">120mm DM 53</div>
                         </div>
                         <div class="spec-item">
-                            <div class="spec-label">Platform</div>
+                            <div class="spec-label">Tank</div>
                             <div class="spec-value">Leopard 2A7</div>
                         </div>
                         <div class="spec-item">
                             <div class="spec-label">Penetrasi</div>
-                            <div class="spec-value">650mm RHA</div>
+                            <div class="spec-value">652mm RHA</div>
                         </div>
                         <div class="spec-item">
                             <div class="spec-label">Kecepatan</div>
@@ -249,9 +286,12 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="bullet-card">
-                    <h3 class="bullet-title">HESH</h3>
+                    <div class="bullet-header">
+                        <h3 class="bullet-title">HESH</h3>
+                        <button class="site-button" onclick="window.open('https://wiki.warthunder.com/unit/uk_fv4005', '_blank')">SITUS</button>
+                    </div>
                     <p class="bullet-description">High-Explosive Squash Head, meledak di permukaan armor dan menciptakan spall untuk merusak interior kendaraan.</p>
                     <div class="bullet-specs">
                         <div class="spec-item">
@@ -259,12 +299,12 @@
                             <div class="spec-value">183mm HESH</div>
                         </div>
                         <div class="spec-item">
-                            <div class="spec-label">Platform</div>
+                            <div class="spec-label">Tank</div>
                             <div class="spec-value">FV 4005</div>
                         </div>
                         <div class="spec-item">
                             <div class="spec-label">Muatan HE</div>
-                            <div class="spec-value">15.8 kg</div>
+                            <div class="spec-value">17 kg</div>
                         </div>
                         <div class="spec-item">
                             <div class="spec-label">Efek</div>
@@ -272,9 +312,12 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="bullet-card">
-                    <h3 class="bullet-title">ATGM tandem</h3>
+                    <div class="bullet-header">
+                        <h3 class="bullet-title">ATGM TANDEM</h3>
+                        <button class="site-button" onclick="window.open('https://wiki.warthunder.com/unit/ussr_9p157', '_blank')">SITUS</button>
+                    </div>
                     <p class="bullet-description">Anti-Tank Guided Missile dengan warhead tandem untuk menembus ERA dan armor reaktif modern.</p>
                     <div class="bullet-specs">
                         <div class="spec-item">
@@ -282,12 +325,12 @@
                             <div class="spec-value">9M123 Khrizantema</div>
                         </div>
                         <div class="spec-item">
-                            <div class="spec-label">Platform</div>
+                            <div class="spec-label">Tank</div>
                             <div class="spec-value">Khrizantema-S</div>
                         </div>
                         <div class="spec-item">
                             <div class="spec-label">Jangkauan</div>
-                            <div class="spec-value">6 km</div>
+                            <div class="spec-value">6.2 km</div>
                         </div>
                         <div class="spec-item">
                             <div class="spec-label">Penetrasi</div>
@@ -447,7 +490,6 @@
             <p class="footer-text">
                 Informasi ini disajikan untuk tujuan edukasi dan referensi teknis.<br>
                 Penggunaan amunisi harus mematuhi hukum dan regulasi yang berlaku.
-                by:CatlazyBB (Dimas)
             </p>
         </div>
     </div>
